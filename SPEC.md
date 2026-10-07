@@ -2,6 +2,20 @@
 
 A Claude Code plugin that adds a small tray above the prompt listing the documents the session has written (reports, handoffs, outlines, exports). Each one is a click away from opening or being revealed in the file manager. This file is the reference for building it.
 
+## 0. Definition of done (acceptance gates; v1 does not ship until every one passes)
+
+Audience: Claude Code users who are less advanced than the author. If they hit one error, they quit.
+
+| # | Gate | Evidence required |
+|---|---|---|
+| G1 | **Clean-install test:** on a fresh Claude Code profile with no other plugins, the one-line `/plugin install` works first try, and the tray appears after the first doc write. Test macOS plus at least one of Linux or Windows. | A transcript or screen recording of each clean install, linked in the PR |
+| G2 | **Demo GIF** at the top of the README, under 10 seconds: a doc gets written, appears in the tray, is opened, the list scrolls, a doc is removed with [x] | The GIF file in `docs/`, under 5 MB |
+| G3 | `claude plugin validate`, `tsc -p .` and `claude plugin test` are all green | CI output or pasted summary |
+| G4 | Scrub: no personal paths, emails, tokens or private project names in the files or git history | The grep command and its empty output |
+| G5 | Every keyboard path in §3 works, or the README states the limit plainly | A test name for each path |
+
+Out of scope for v1: themes, a cloud sync, analytics, any paid tier.
+
 ## 1. What it does
 
 ```
