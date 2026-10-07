@@ -16,7 +16,7 @@ Audience: Claude Code users who are less advanced than the author. If they hit o
 
 Out of scope for v1: themes, cloud sync, analytics.
 
-**Free forever (author ruling).** MIT license, no paid tier, no upsell prompts, no nags in the UI. The only mention of the author is one line at the bottom of the README ("Built by ...", linking to the author's site, once one exists). The tool earns reputation; it does not sell.
+**Free forever (author ruling).** MIT license, no paid tier, no upsell prompts, no nags in the UI. The only mention of the author is one line at the bottom of the README ("Built by Quantum Armadillo", linking to https://quantumarmadillo.com; repoint if a dedicated services site launches). The tool earns reputation; it does not sell.
 
 ## 1. What it does
 
