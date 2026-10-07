@@ -1,0 +1,19 @@
+{
+  "name": "doc-tray",
+  "version": "0.1.0",
+  "description": "Doc Tray for Claude Code: a clickable tray of every file your session writes. Open, reveal, scroll, and auto-dedupe versions.",
+  "author": { "name": "Quantum Armadillo, LLC", "url": "https://quantumarmadillo.com" },
+  "homepage": "https://github.com/StevieClear/doc-tray-for-claude-code",
+  "repository": "https://github.com/StevieClear/doc-tray-for-claude-code",
+  "license": "MIT",
+  "keywords": ["claude-code", "claude-code-plugin", "productivity", "file-manager", "terminal"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "extensions": {
+      "type": "string",
+      "title": "Doc extensions",
+      "description": "Space-separated file extensions the tray captures automatically.",
+      "default": ".md .html .pdf .xlsx .csv .docx .pptx"
+    }
+  }
+}
