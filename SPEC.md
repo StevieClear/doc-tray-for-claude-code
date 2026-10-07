@@ -14,7 +14,9 @@ Audience: Claude Code users who are less advanced than the author. If they hit o
 | G4 | Scrub: no personal paths, emails, tokens or private project names in the files or git history | The grep command and its empty output |
 | G5 | Every keyboard path in §3 works, or the README states the limit plainly | A test name for each path |
 
-Out of scope for v1: themes, a cloud sync, analytics, any paid tier.
+Out of scope for v1: themes, cloud sync, analytics.
+
+**Free forever (author ruling).** MIT license, no paid tier, no upsell prompts, no nags in the UI. The only mention of the author is one line at the bottom of the README ("Built by ...", linking to the author's site, once one exists). The tool earns reputation; it does not sell.
 
 ## 1. What it does
 
