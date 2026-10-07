@@ -107,6 +107,18 @@ People search for what they want ("claude code plugin", "see files claude code c
   - Write one blog post that targets the "see files claude code created" query and links to the repo.
 - **Releases:** tag versions (v0.1.0 ...) with notes. Release pages get indexed, and stars plus recent activity drive GitHub search rank.
 
+### 8a. AI findability (answer engines and agents)
+
+When someone asks Claude, ChatGPT, Perplexity or a coding agent "how do I see the files Claude Code made?", the answer comes from training data plus a live web search. The goal is to be the answer those systems give.
+
+- **Use the same one-line description everywhere:** GitHub, the README, `llms.txt`, posts and directories. Identical wording makes the model treat it as one well-attested entity.
+- **Get mentioned where models look:** Reddit, Hacker News, awesome-lists, dev.to and plugin directories. Answer engines cite these far more than they cite a fresh repo.
+- **Make it agent-installable:** a one-line install that a coding agent can run when a user asks "add a doc tray". The agent then becomes a distribution channel. Include the exact command in `llms.txt` and the README.
+- **Write a comparison page** (`docs/RIVALS.md`, rendered on a site if one exists), such as "Doc Tray vs X". Models lean on comparison content for "best tool for..." questions.
+- **Add structured data on a landing page**, if one is built: schema.org `SoftwareApplication` JSON-LD (name, description, install, license, repo).
+- **Write README headings as questions.** Each FAQ answer should stand alone, so a model can quote it without extra context.
+- **Measure it monthly:** ask 3-4 assistants the target questions and log whether Doc Tray is named. That's the AI-search rank tracker.
+
 ## 9. Rules
 
 - MIT license. No personal paths, emails, tokens or private project names anywhere in the repo or its history.
