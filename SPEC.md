@@ -71,7 +71,7 @@ Detect the platform through the plugin API. If a command fails, show a toast; ne
 ## 6. Repo shape and distribution
 
 - The repo is a **plugin marketplace**, so installing is one line:
-  `/plugin install doc-tray --marketplace StevieClear/doc-tray`
+  `/plugin install doc-tray --marketplace StevieClear/doc-tray-for-claude-code`
 - Layout:
   - `.claude-plugin/plugin.json` and `marketplace.json`
   - `hooks/hooks.json` and `hooks/register.tsx`
@@ -91,7 +91,7 @@ Detect the platform through the plugin API. If a command fails, show a toast; ne
 
 People search for what they want ("claude code plugin", "see files claude code created", "claude code artifacts panel"), not for brand names. Capture those searches.
 
-- **Repo slug:** `doc-tray-for-claude-code` (recommended rename; GitHub redirects the old URL). "for Claude Code" is the nominative form: it names the host app without implying an Anthropic product. Display name: **Doc Tray**.
+- **Repo slug:** `doc-tray-for-claude-code` (GitHub redirects the old doc-tray URL). "for Claude Code" is the nominative form: it names the host app without implying an Anthropic product. Display name: **Doc Tray**.
 - **Description (also the Google snippet):** "Doc Tray for Claude Code: a clickable tray of every file your session writes. Open, reveal, scroll, and auto-dedupe versions."
 - **Topics (GitHub ranks on these):** claude-code, claude-code-plugin, claude-code-plugins, ai-coding, ai-agents, developer-tools, terminal, cli, productivity, file-manager.
 - **README for humans and AI crawlers:**
