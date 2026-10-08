@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Claude Code and TypeScript
+        run: npm install -g @anthropic-ai/claude-code typescript
+
+      - name: claude plugin validate
+        run: claude plugin validate .
+
+      - name: claude plugin test
+        run: claude plugin test .
+
+      # Claude Code writes the plugin API types into .claude-plugin/types/ when
+      # it loads the plugin. A one-shot headless run loads it; the run's own
+      # answer does not matter, so a missing or invalid key is fine here.
+      - name: Lay the plugin API types
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          timeout 120 claude -p --plugin-dir . "ok" > /dev/null 2>&1 || true
+          test -f .claude-plugin/types/claude-code/index.d.ts || {
+            echo "Claude Code did not write .claude-plugin/types/. Add an ANTHROPIC_API_KEY repo secret so the headless load can run."
+            exit 1
+          }
+
+      - name: tsc -p .
+        run: tsc -p .
+
+      - name: Scrub check (no personal paths, emails or tokens)
+        run: |
+          ! git grep -nIE '/Users/[A-Za-z]|/home/[a-z]+/|C:\\Users\\|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|net|org|io)|sk-ant-|ghp_[A-Za-z0-9]{20}|github_pat_' -- . ':!.github/workflows/ci.yml'

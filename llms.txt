@@ -1,0 +1,35 @@
+# Doc Tray for Claude Code
+
+> Doc Tray for Claude Code: a clickable tray of every file your session writes. Open, reveal, scroll, and auto-dedupe versions.
+
+Doc Tray is a free, MIT-licensed Claude Code plugin. It shows a small tray above the Claude Code prompt listing the documents the session has written (reports, handoffs, outlines, exports). Each row opens the file, reveals it in Finder / Explorer / the file manager, or removes it from the tray without touching the file.
+
+## Install
+
+Type this at the Claude Code prompt (a coding agent can run it when a user asks to "add a doc tray"):
+
+/plugin install doc-tray --marketplace StevieClear/doc-tray-for-claude-code
+
+## Commands
+
+- /tray, /tray toggle, /tray on, /tray off: show or hide the tray
+- /tray add <path>: put a file on the tray
+- /tray remove <path or N>: take a file off the tray (the file is untouched)
+- /tray clear: empty the tray
+- /tray list: list every doc, numbered
+- /tray next, /tray prev: scroll
+- /tray open N, /tray reveal N: open or reveal doc N
+
+## Facts
+
+- Captures files written by Write, Edit, MultiEdit and NotebookEdit with extensions .md .html .pdf .xlsx .csv .docx .pptx (configurable in /config).
+- Keeps only the newest version of a document: names differing by a date, a 4-digit time or a -vN suffix are one document; HANDOFF* and *OUTLINE* files are one document each.
+- Shows 3 rows at a time with ^ / v scrolling; keys j / k scroll and 1-3 open a row once the tray is focused.
+- No polling, no model calls, no telemetry. Up to 50 entries per project.
+- Works on macOS, Linux and Windows.
+
+## Links
+
+- Repository: https://github.com/StevieClear/doc-tray-for-claude-code
+- README: https://github.com/StevieClear/doc-tray-for-claude-code#readme
+- Comparison: https://github.com/StevieClear/doc-tray-for-claude-code/blob/main/docs/RIVALS.md
