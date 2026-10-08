@@ -1,0 +1,14 @@
+{
+  "name": "doc-tray-for-claude-code",
+  "description": "Doc Tray for Claude Code: a clickable tray of every file your session writes.",
+  "owner": {
+    "name": "Quantum Armadillo, LLC"
+  },
+  "plugins": [
+    {
+      "name": "doc-tray",
+      "source": "./",
+      "description": "Doc Tray for Claude Code: a clickable tray of every file your session writes. Open, reveal, scroll, and auto-dedupe versions."
+    }
+  ]
+}
